@@ -32,7 +32,7 @@ const createPost = async <T extends object>(
   apiUrl: string = API_URL
 ): Promise<void> => {
   try {
-    const { status, data } = await axios.post(apiUrl, newPost);
+    const { status, data } = await axios.post<T, AxiosResponse<T>>(apiUrl, newPost);
     if (status === HttpStatusCode.Created) {
       console.log(data);
     } else {
@@ -86,6 +86,7 @@ const deletePost = async (
   try {
     const { status } = await axios.delete<{}>(apiUrl.concat(`/${id}`));
     if (status === HttpStatusCode.Ok) {
+      console.log("ลบข้อมูลสำเร็จ");
     } else {
       throw new AxiosError("เกิดข้อผิดพลาดขึ้น!", status.toString());
     }
