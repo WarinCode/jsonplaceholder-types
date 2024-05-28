@@ -1,0 +1,17 @@
+{
+  "name": "jsonplaceholder-types",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "npx tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.7.2"
+  },
+  "type": "module"
+}
