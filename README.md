@@ -10,7 +10,7 @@
 1. ติดตั้งโปรเจค
 
 ```
-git clone
+git clone https://github.com/WarinCode/jsonplaceholder-types.git
 ```
 
 2. เข้าไปยัง directory โปรเจค
@@ -66,9 +66,9 @@ todos.push(todo, todo2);
 ```typescript
 import axios, { AxiosResponse, AxiosError, HttpStatusCode } from "axios";
 import * as ResourceType from "jsonplaceholder";
-const API_URL = "https://jsonplaceholder.typicode.com/posts";
+const API_URL: string = "https://jsonplaceholder.typicode.com/posts";
 
-// สำหรับ method GET
+// ตัวอย่างสำหรับการยิง request ใน method GET
 const fetchPosts = async <T extends object | Array<object>>(
   apiUrl: string = API_URL
 ): Promise<T | null> => {
@@ -167,5 +167,5 @@ deletePost(3);
 
 ---
 
-### ประโยชน์
+### ข้อดี
 *มี autocomplete ขึ้นให้อัติโนมัติไม่ต้องเสียเวลาเขียน type ใน object ให้นานเหมาะกับการทดสอบ API แล้วต้องเอาข้อมูลไปใช้งานต่อ*
