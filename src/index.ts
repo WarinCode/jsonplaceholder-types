@@ -1,7 +1,6 @@
 import axios, { AxiosResponse, AxiosError, HttpStatusCode } from "axios";
 import * as ResourceType from "jsonplaceholder";
 const API_URL = "https://jsonplaceholder.typicode.com/posts";
-import { Todo, Comment } from "jsonplaceholder";
 
 // ตัวอย่างสำหรับการยิง request ใน method GET
 const fetchPosts = async <T extends object | Array<object>>(
