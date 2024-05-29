@@ -68,12 +68,12 @@ import axios, { AxiosResponse, AxiosError, HttpStatusCode } from "axios";
 import * as ResourceType from "jsonplaceholder";
 const API_URL: string = "https://jsonplaceholder.typicode.com/posts";
 
-// ตัวอย่างสำหรับการยิง request ใน method GET
+// สำหรับ method GET
 const fetchPosts = async <T extends object | Array<object>>(
   apiUrl: string = API_URL
 ): Promise<T | null> => {
   try {
-    const { data, status } = await axios.get<Readonly<T>>(apiUrl);
+    const { data, status } = await axios.get<T>(apiUrl);
     if (status === HttpStatusCode.Ok) {
       return data;
     } else {
@@ -90,7 +90,6 @@ const fetchPosts = async <T extends object | Array<object>>(
 const posts: NonNullable<ResourceType.Posts> =
   (await fetchPosts<ResourceType.Posts>()) as NonNullable<ResourceType.Posts>;
 console.log(posts);
-// ทำบางอย่างกับข้อมูลที่ response มา ...
 
 // สำหรับ method POST
 const createPost = async <T extends object>(
@@ -164,7 +163,6 @@ const deletePost = async (
 };
 
 deletePost(3);
-
 ```
 
 ---
